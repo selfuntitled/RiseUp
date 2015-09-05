@@ -1,0 +1,744 @@
+/** STOP - THERE BE DRAGONS HERE **
+ * Just kidding - no dragons
+ * Just make sure you're making changes to this file
+ * in the scss folder, using the scss language, not 
+ * in the CSS.  That prevents accidentally losing changes when the scss is compiled.
+ * To compile changes, run the command 'runsass' (without quotes) - this is a shell alias
+ * cd into the sass directory and start the compiler.
+ * This will automatically compile anything in the SASS directory into CSS.
+ */
+
+$break-large: 980px;
+$break-medium: 740px;
+$break-small: 600px;
+
+$blue: rgb(29,110,128);
+$brown: rgb(157,104,70);
+$dark-brown: rgb(138, 72, 31);
+
+@mixin dropshadow() {
+  box-shadow: 2px 2px 5px 1px #333333;
+}
+
+@mixin rounded() {
+  border-radius: 4px;
+}
+
+@mixin paperbackground() {
+  background-image: url('/sites/all/themes/riseup/images/paper-texture-highres.jpg');
+}
+
+@mixin snapshotstyle() {
+  padding: 9px;
+  background: white;
+}
+
+/** Default site stylesheet **/
+h1, h2, h3, h4 {
+  color: $blue;
+  a:link, a:visited {
+    color: $blue;
+  }
+}
+
+h2, h3, h4 {
+  font-family: 'Mathlete Bulky';
+  font-weight: bold;
+}
+
+h1 {
+  font-family: pointy;
+  font-size: 4em;
+}
+
+h2, h2.block-title, h2.field-name-title-field a, .front .node-teaser h2.node-title a {
+  font-size: 2em;
+}
+
+html, body, div, p {
+  font-family: 'Alegreya Sans';
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+h1.title {
+  font-size: 1.5em;
+  color: $blue;
+}
+
+.field-type-list-text {
+  .field-label {
+    font-family: 'Alegreya Sans';
+  }
+}
+
+#zone-user-wrapper {
+  opacity: .75;
+  background: #e8e2da;
+  color: black;
+}
+
+#zone-user-wrapper li a {
+  color: black;
+  font-size: 1em;
+  @media screen and (max-width $break-small) {
+	letter-spacing: 0;
+  }
+}
+
+#zone-content {
+  @include paperbackground();
+}
+body {
+  background-image: url('/sites/all/themes/riseup/images/woodgrain2.jpg');
+}
+
+body, #zone-branding-wrapper {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%;
+}
+
+#zone-branding-wrapper, #section-footer {
+  @include paperbackground();
+}
+
+.ds-3col-stacked-fluid.group-one-sidebar > .group-middle {
+  padding-right: 1em;
+  width: 70%;
+}
+
+/**Style the site name and slogan**/
+.site-name-slogan {
+  h1, h2 {
+    font-size: 4em;
+    a {
+	  color: $blue;
+	}
+  }
+  h6 {
+    color: $brown;
+	font-family: 'Alegreya Sans';
+    font-weight: 500;
+	font-size: 0.9em;
+  }
+  @media screen and (min-width: $break-medium) {
+    margin-top: -2em;
+  }
+  @media screen and (max-width: $break-medium) {
+    width: 100%;
+    text-align: center;
+	margin-left: 0;
+  }
+  h1 {
+  }
+  h6 {
+  }
+  margin-left: 1em;
+}
+
+#zone-branding {
+  @media screen and (min-width: $break-medium) {
+    height: 11em;
+  }
+  @media screen and (max-width: $break-medium) {
+    height: 8em;
+  }
+  @media screen and (min-width: $break-medium) {
+    background-position: 0 -75px;
+  }
+  @media screen and (max-width: $break-small) {
+    background-position: 0 5px;
+  }
+}
+
+/******Search Styles******/
+/**Search in nav for mobile display**/
+@media screen and (max-width: $break-medium) {
+  /*Hide the desktop search box */
+  #views-exposed-form-clone-of-search-desktop-page {
+    display: none;
+  } 
+  .search-toggle {
+	@include rounded();
+	@include dropshadow();
+	display: block;
+	background-image: url('/sites/all/themes/riseup/images/search-brown.png');
+	height: 36px;
+	width: 36px;
+	background-size: 100%;
+	float: right;
+	margin-right: 5em;
+	display: block;
+	margin-top: 1.5em;
+	.toggle-help {
+	  margin-left: 0.8em;
+	  color: #444;
+	  text-transform: uppercase;
+	  font-family: 'Mathlete Bulky';
+	  font-size: 3em;
+	  display: block;
+	  margin-top: -0.4em
+	}
+  }
+  #views-exposed-form-search-page {
+    display: none;
+    #edit-combine-wrapper {
+	  margin-top: 4em;
+	  float: right;
+	}
+	.views-submit-button {
+	  margin-top: 4.5em;
+	  float: right;
+	}
+  }
+}
+
+@media screen and (max-width 520px) and (min-width: 420px) {
+  .html #views-exposed-form-search-page {
+	.views-submit-button {
+	  margin-top: -2em;
+	}
+  }
+}
+
+
+/**Search in header for desktop display**/
+/* Hide the mobile search box */
+@media screen and (min-width: $break-medium) {
+  #views-exposed-form-search-page {
+    display: none;
+  }
+  .search-toggle {
+    display: none;
+  }
+  #block-views-b274ee587018399c2a9796507b4b80e0 {
+    float: right;
+	.content {
+	  margin-top: -5em;
+	}
+  }
+}
+
+/*****MENU******/
+
+/*Viewport independent cleanup items*/
+
+
+.navigation {
+  ul#main-menu {
+    li {
+      a {
+	    background: none;
+	    border: none;
+		color: $blue;
+		font-size: 200%;
+		font-family: 'Mathlete Bulky';
+        font-weight: bold;
+	  }
+    }
+  }
+}
+
+@media screen and (min-width: $break-medium) {
+  #zone-menu {
+    margin-bottom: -3em;
+  }
+}
+
+/** Drop down the menu bottom to give space for responsive menu/search buttons **/
+@media screen and (max-width: $break-medium) {
+  #zone-menu {
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-width: $break-medium) and (min-width: $break-large) {
+  .navigation {
+    ul#main-menu {
+      li {
+        a {
+          padding: 2em;
+		}
+	  }
+	}
+  }
+}
+
+@media screen and (max-width: $break-medium) {
+  .region-menu {
+    .menu-toggle {
+      margin-top: 4em;
+    }
+  }
+}
+@media screen and (max-width: $break-medium) {
+  #region-menu {
+    .menu-toggle {
+      background: #8a481f;
+      @include dropshadow();
+	  .toggle-help {
+        color: #444;
+	    text-transform: uppercase;
+        font-family: 'Mathlete Bulky';
+	    font-size: 3em;
+	    margin-top: -.5em;
+	  }
+	  .line {
+        border-bottom: solid 2px #FFF;
+	  }	
+    }
+	nav.navigation {
+	  h2 {
+	    display: none;
+	  }
+	  #main-menu {
+	    display: inline-block;
+	    margin-top: 3em;
+	  }
+	}
+  }
+  .qtip-wrapper {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $break-medium) {
+  nav.navigation {
+    margin-top: -3.5em;
+    width: 100%;
+    li {
+      a {
+        font-size: 1.5em;
+	    color: $blue;
+	    font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-medium) {
+  nav.navigation {
+    .primary-menu ul#main-menu li {
+  	  a {
+	    padding: 8px 10px;
+	  }
+    }	
+  }
+}
+
+/** Mega Menu **/
+.qtip {
+  .grid-9 {
+    width: 70%;
+  }
+}
+
+/** Hide Mega Menus in Footer **/
+.qtip[qtip="1"], .qtip[qtip="3"], .qtip[qtip="5"], .qtip[qtip="7"], .qtip[qtip="9"], .qtip[qtip="11"] {
+  display: none !important;
+}
+
+
+/** Homepage body blocks **/
+
+.block-2 {
+    @include dropshadow();
+    @include paperbackground();
+    padding: 1em;
+	border: solid 2px $dark-brown;
+  @media screen and (max-width: $break-medium) {
+    margin: 2em 2em 2em 2em;
+  }
+}
+
+#block-views-homepage-show-block {
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}
+
+.view-dom-id-378678362a205731918e9ff7d247679c {
+  @include dropshadow();
+}
+
+.view-display-id-block_1 {
+  .views-row {
+    margin-bottom: .6em;
+    .views-field-title {
+      background: white;
+	  padding: 0.3em;
+	  opacity: 0.93;
+	  font-family: 'Mathlete Bulky';
+      font-weight: bold;
+	  font-size: 1.8em;
+	  line-height: 0.8em;
+	  a {
+	    color: $blue;
+	  }
+    }
+    .field-name-field-featured-image, .field-name-field-cover-photo {
+      margin-top: -2.4em;
+	  img {
+  	    @include snapshotstyle();
+	  }
+    }
+  }
+}
+
+#zone-preface {
+  background: none; 
+}
+
+#block-block-3 {
+  h2 {
+    font-family: pointy;
+    color: $dark-brown;
+    border-bottom: 1px dashed;
+  }
+  .content {
+    height: 0;
+  }
+}
+
+.front .region-content {
+  h2.block-title {
+    color: $dark-brown;
+	border-bottom: solid 2px $dark-brown;
+	font-size: 1.5em;
+	font-weight: bold;
+  }
+  .views-field {
+    background: none;
+	font-family: 'Alegreya Sans';
+    font-weight: 500;
+	font-size: 1em;
+  }
+  .views-field-created {
+    color: grey;
+  }
+  .views-field-field-date {
+    color: $dark-brown;
+  }
+  .views-field-title a {
+    color: $blue;
+  }
+}
+
+.front aside#region-sidebar-first,
+.front aside#region-sidebar-second {
+  display: none;
+}
+
+.front #region-content {
+  @media screen and (min-width: $break-large) {
+    width: 940px;
+  }
+}
+
+.block-news-list-view-block-1,
+.block-events-list-view-block {
+  float: left;
+  margin-right: 2em;
+  li:before {
+    content: "• ";
+	color: $dark-brown;
+	text-indent: -10px;
+  }
+  @media screen and (min-width: $break-large) {
+    width: 540px;
+  }
+  @media screen and (max-width: $break-large) {
+    width: 540px;
+  }
+  @media screen and (max-width: $break-small) {
+    width: 400px;
+  }
+}
+
+.block-views-featured-songs-videos-block {
+  @media screen and (min-width: $break-large) {
+    margin-left: 560px;
+  }
+  @media screen and (max-width: $break-large) {
+    clear: both;
+	width: 500px;
+  }
+  @media screen and (max-width: $break-small) {
+    width: 400px;
+  }
+}
+
+
+/** Fix left margin on flexslider slides **/ 
+
+#flexslider-1 ul li {
+  margin-left: 0; 
+}
+
+/** Product Display **/
+.ds-2col-stacked-fluid > .group-left {
+  float: left; /* LTR */
+  width: 60%;
+}
+
+.ds-2col-stacked-fluid > .group-right {
+  float: right; /* LTR */
+  width: 35%;
+}
+
+
+/** Interior Page **/
+#section-content h1#page-title {
+  font-size: 32px;
+}
+
+.region-header-first {
+  img {
+    @include snapshotstyle();
+	margin-bottom: 2em;
+  }
+}
+
+/** Song **/
+.ds-3col-stacked {
+  .wide-middle-column {
+    width: 70%;
+  }
+}
+
+.entity-song-video h2 {
+  font-size: 1.2em;
+}
+
+.field-name-field-videos {
+  .field-item {
+    float: left;
+    margin-right: 2em;
+  }
+}
+
+/** Product **/
+.node-type-product-display {
+  .group-left {
+    float: left;
+  }
+  .group-right {
+    float: right;
+	width: 40%;
+  }
+  .form-item-quantity {
+    label {
+      width: 160px;
+	}
+  }
+}
+
+/** Song Circle **/
+.view-singalongs-song-circles {
+  .views-column {
+    width: 230px;
+	float: left;
+	margin-bottom: 1em;
+  }
+  .views-column-first {
+	  clear: left;
+  }
+  h3 {
+    @include rounded();
+	clear: both;
+	margin-bottom: .3em;
+	background: #eeeeee;
+	border: 1px solid #898a8c;
+	padding: .25em; 
+  }
+  @media screen and (max-width: $break-large) {
+    .views-column-last {
+	  clear: left;
+	}
+  }
+  @media screen and (max-width: $break-medium) {
+    .view-header {
+	  .view-singalongs-song-circles .views-column {
+	    margin-bottom: 0;
+	    ul {
+		  margin-bottom: 0;
+		}
+	  }
+	}
+  }
+}
+
+.location .region {
+  margin: 0;
+}
+
+/** Product Listing **/
+.page-products .view-display-products {
+  li header h2.field-name-title-field a {
+    font-size: 2em;
+	color: $blue;
+  }
+}
+
+/** Pete Seeger Listing **/
+.view-id-seeger_categories {
+  .field-name-field-cover-photo {
+    float: left;
+	margin-right: 2em;
+  }
+  .views-field-title {
+    float: left;
+	margin-right: 1em;
+	width: 350px;
+  }
+  .views-row {
+    clear: left;
+	padding-top: 2em;
+  }
+}
+
+/** Inline add to cart for related products **/
+.field-name-field-related-products {
+  margin-top: 1em;
+.node-product-type-related-product {
+  h2 {
+    margin-bottom: 0;
+	a {
+	  font-size: 1em;
+	}
+  }
+  .field-name-commerce-price {
+    margin: 0;
+  }
+  .field-name-commerce-price {
+    padding-bottom: 0;
+  }
+  .field-name-field-product form.commerce-add-to-cart {
+	padding-top: 0;
+	background: none;
+	#edit-submit, #edit-submit--2, #edit-submit--3 {
+	  padding-top: 0;
+	  margin-top: 0;
+	}
+  }
+  .grid-8 {
+    padding-left: 0;
+  }
+}
+}
+
+/** Add to cart confirmation **/
+#messages div.messages.commerce-add-to-cart-confirmation {
+  @include paperbackground();
+  background: white;
+  .button-wrapper {
+    background: none;
+  }
+}
+
+#edit-checkout-donate-commerce-donate-amount-und-select:nth-child(2) {
+  padding-top: 2em;
+}
+
+/** Search header **/
+
+.block-views-exp-display-products-page {
+  h2 {
+    @media screen and (max-width: $break-medium) {
+      float: left;
+      margin-left: 70%;
+      padding-top: .5em;
+      color: #666;
+      font-weight: normal;
+    }
+  }
+}
+
+/** Social Icons Tab **/
+#block-block-6 div.block-inner {
+  @include rounded();
+  @include paperbackground();
+  z-index: 9999;
+  h2.block-title {
+    font-size: 1.4em;
+    line-height: 1em;
+  }
+  @media screen and (min-width: $break-medium) {
+    right: 0px;
+    top: 250px;
+    height: 270px;
+    width: 40px;
+    margin: 0;
+    padding: 8px;
+    position: fixed;
+    display: block;
+	img {
+	  display: block;
+	  margin-top: 2px;
+	  margin-bottom: 2px;
+	  width: 42px; 
+	  height: 42px;
+	}
+  }
+  @media screen and (max-width: $break-medium) {
+	display: none;
+  }
+}
+
+/** Footer **/
+#zone-footer .region-footer-third-inner .block {
+  width: 50%;
+  float: left;
+}  
+
+/** Donate **/
+#edit-line-item-fields .form-item-line-item-fields-commerce-donate-amount-und-select label{
+  float: none;
+}
+  
+/** Ticket Sales **/
+.passengers_select .form-item.form-type-select {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+
+#commerce-tickets-purchase-form #edit-submit,
+#commerce-tickets-purchase-form #total_cost {
+  float: left;
+}
+
+.field-name-field-buy-tickets .field-label {
+  margin-bottom: 1em;
+}
+
+.field-name-field-venue-website,
+.field-name-field-contact-name {
+  margin-top: 1em;
+}
+
+/** Shopping Cart Styles **/
+
+/**
+
+//Overide donate button here
+.node-donation {
+  .form-submit {
+    background-image: url('/sites/all/themes/riseup/images/bg_add_to_cart.png');
+  }
+}
+
+#edit-checkout-donate {
+  width: 60%;
+}
+
+
+.form-item-checkout-donate-commerce-donate-amount-und-select {
+  label {
+    width: 980px;
+	}
+}
+
+**/

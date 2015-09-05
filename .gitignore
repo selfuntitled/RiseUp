@@ -1,0 +1,12 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore external libraries from Used by Commerc Kickstart
+profiles/commerce_kickstart/libraries/jquery.bxslider
+profiles/commerce_kickstart/libraries/jquery_expander
+profiles/commerce_kickstart/libraries/jquery_ui_spinner
+profiles/commerce_kickstart/libraries/selectnav.js

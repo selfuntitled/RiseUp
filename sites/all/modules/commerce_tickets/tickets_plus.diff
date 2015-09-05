@@ -1,0 +1,20 @@
+--- commerce_tickets/commerce_tickets.module 
++++ commerce_tickets/commerce_tickets.module 
+@@ -177,12 +177,14 @@
+     $display = array();
+ 
+     foreach ($types as $type) {
+-      $ticket = commerce_product_load($type);
+-      $display[$ticket->product_id] = $ticket->title;
++      if ($type<>0){
++        $ticket = commerce_product_load($type);
++        $display[$ticket->product_id] = $ticket->title;
++      }
+     }
+-
++    $form_temp = drupal_get_form('commerce_tickets_purchase_form', $object, $display, $button_text, $settings);
+     $element[$delta] = array(
+-        '#markup' => drupal_render(drupal_get_form('commerce_tickets_purchase_form', $object, $display, $button_text, $settings)),
++        '#markup' => drupal_render($form_temp),
+     );
+   }

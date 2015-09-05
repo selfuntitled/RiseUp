@@ -1,0 +1,28 @@
+<?php
+/**
+ * Implements hook_inline_entity_form_table_fields_alter().
+ */
+function riseup_custom_inline_entity_form_table_fields_alter(&$fields, $context) {
+    //Look for the song video entity type
+    $is_my_content_type = FALSE;
+    foreach ($context['allowed_bundles'] as $bundle) {
+      if ($bundle=='song_video') {
+        $is_my_content_type = TRUE;
+      }
+    }
+    if ($is_my_content_type) {
+      unset($fields['id']);    // This line removes the title field. you're looking to do this, just with the status instead of title field
+      unset($fields['status']);
+      $fields['field_link_to_video'] = array(                   // Add the URL link to the video
+        'type' => 'field',
+        'label' => t('Link to Video'),
+        'weight' => 101,
+      );
+      $fields['field_performed_by'] = array(                   // Add the performed by field
+        'type' => 'field',
+        'label' => t('Artist'),
+        'weight' => 102,
+      );
+    }
+}
+

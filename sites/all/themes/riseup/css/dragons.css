@@ -1,0 +1,523 @@
+/** STOP - THERE BE DRAGONS HERE **
+ * Just kidding - no dragons
+ * Just make sure you're making changes to this file
+ * in the scss folder, using the scss language, not 
+ * in the CSS.  That prevents accidentally losing changes when the scss is compiled.
+ * To compile changes, run the command 'runsass' (without quotes) - this is a shell alias
+ * cd into the sass directory and start the compiler.
+ * This will automatically compile anything in the SASS directory into CSS.
+ */
+/** Default site stylesheet **/
+h1, h2, h3, h4 {
+  color: #1d6e80; }
+  h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:link, h4 a:visited {
+    color: #1d6e80; }
+
+h2, h3, h4 {
+  font-family: 'Mathlete Bulky';
+  font-weight: bold; }
+
+h1 {
+  font-family: pointy;
+  font-size: 4em; }
+
+h2, h2.block-title, h2.field-name-title-field a, .front .node-teaser h2.node-title a {
+  font-size: 2em; }
+
+html, body, div, p {
+  font-family: 'Alegreya Sans';
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500; }
+
+h1.title {
+  font-size: 1.5em;
+  color: #1d6e80; }
+
+.field-type-list-text .field-label {
+  font-family: 'Alegreya Sans'; }
+
+#zone-user-wrapper {
+  opacity: .75;
+  background: #e8e2da;
+  color: black; }
+
+#zone-user-wrapper li a {
+  color: black;
+  font-size: 1em; }
+  @media screen and (max-width 600px) {
+    #zone-user-wrapper li a {
+      letter-spacing: 0; } }
+
+#zone-content {
+  background-image: url("/sites/all/themes/riseup/images/paper-texture-highres.jpg"); }
+
+body {
+  background-image: url("/sites/all/themes/riseup/images/woodgrain2.jpg"); }
+
+body, #zone-branding-wrapper {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%; }
+
+#zone-branding-wrapper, #section-footer {
+  background-image: url("/sites/all/themes/riseup/images/paper-texture-highres.jpg"); }
+
+.ds-3col-stacked-fluid.group-one-sidebar > .group-middle {
+  padding-right: 1em;
+  width: 70%; }
+
+/**Style the site name and slogan**/
+.site-name-slogan {
+  margin-left: 1em; }
+  .site-name-slogan h1, .site-name-slogan h2 {
+    font-size: 4em; }
+    .site-name-slogan h1 a, .site-name-slogan h2 a {
+      color: #1d6e80; }
+  .site-name-slogan h6 {
+    color: #9d6846;
+    font-family: 'Alegreya Sans';
+    font-weight: 500;
+    font-size: 0.9em; }
+  @media screen and (min-width: 740px) {
+    .site-name-slogan {
+      margin-top: -2em; } }
+  @media screen and (max-width: 740px) {
+    .site-name-slogan {
+      width: 100%;
+      text-align: center;
+      margin-left: 0; } }
+
+@media screen and (min-width: 740px) {
+  #zone-branding {
+    height: 11em; } }
+@media screen and (max-width: 740px) {
+  #zone-branding {
+    height: 8em; } }
+@media screen and (min-width: 740px) {
+  #zone-branding {
+    background-position: 0 -75px; } }
+@media screen and (max-width: 600px) {
+  #zone-branding {
+    background-position: 0 5px; } }
+
+/******Search Styles******/
+/**Search in nav for mobile display**/
+@media screen and (max-width: 740px) {
+  /*Hide the desktop search box */
+  #views-exposed-form-clone-of-search-desktop-page {
+    display: none; }
+
+  .search-toggle {
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px 1px #333333;
+    display: block;
+    background-image: url("/sites/all/themes/riseup/images/search-brown.png");
+    height: 36px;
+    width: 36px;
+    background-size: 100%;
+    float: right;
+    margin-right: 5em;
+    display: block;
+    margin-top: 1.5em; }
+    .search-toggle .toggle-help {
+      margin-left: 0.8em;
+      color: #444;
+      text-transform: uppercase;
+      font-family: 'Mathlete Bulky';
+      font-size: 3em;
+      display: block;
+      margin-top: -0.4em; }
+
+  #views-exposed-form-search-page {
+    display: none; }
+    #views-exposed-form-search-page #edit-combine-wrapper {
+      margin-top: 4em;
+      float: right; }
+    #views-exposed-form-search-page .views-submit-button {
+      margin-top: 4.5em;
+      float: right; } }
+@media screen and (max-width 520px) and (min-width: 420px) {
+  .html #views-exposed-form-search-page .views-submit-button {
+    margin-top: -2em; } }
+/**Search in header for desktop display**/
+/* Hide the mobile search box */
+@media screen and (min-width: 740px) {
+  #views-exposed-form-search-page {
+    display: none; }
+
+  .search-toggle {
+    display: none; }
+
+  #block-views-b274ee587018399c2a9796507b4b80e0 {
+    float: right; }
+    #block-views-b274ee587018399c2a9796507b4b80e0 .content {
+      margin-top: -5em; } }
+/*****MENU******/
+/*Viewport independent cleanup items*/
+.navigation ul#main-menu li a {
+  background: none;
+  border: none;
+  color: #1d6e80;
+  font-size: 200%;
+  font-family: 'Mathlete Bulky';
+  font-weight: bold; }
+
+@media screen and (min-width: 740px) {
+  #zone-menu {
+    margin-bottom: -3em; } }
+/** Drop down the menu bottom to give space for responsive menu/search buttons **/
+@media screen and (max-width: 740px) {
+  #zone-menu {
+    margin-bottom: 2em; } }
+@media screen and (max-width: 740px) and (min-width: 980px) {
+  .navigation ul#main-menu li a {
+    padding: 2em; } }
+@media screen and (max-width: 740px) {
+  .region-menu .menu-toggle {
+    margin-top: 4em; } }
+@media screen and (max-width: 740px) {
+  #region-menu .menu-toggle {
+    background: #8a481f;
+    box-shadow: 2px 2px 5px 1px #333333; }
+    #region-menu .menu-toggle .toggle-help {
+      color: #444;
+      text-transform: uppercase;
+      font-family: 'Mathlete Bulky';
+      font-size: 3em;
+      margin-top: -.5em; }
+    #region-menu .menu-toggle .line {
+      border-bottom: solid 2px #FFF; }
+  #region-menu nav.navigation h2 {
+    display: none; }
+  #region-menu nav.navigation #main-menu {
+    display: inline-block;
+    margin-top: 3em; }
+
+  .qtip-wrapper {
+    display: none; } }
+@media screen and (min-width: 740px) {
+  nav.navigation {
+    margin-top: -3.5em;
+    width: 100%; }
+    nav.navigation li a {
+      font-size: 1.5em;
+      color: #1d6e80;
+      font-weight: bold; } }
+@media screen and (min-width: 740px) {
+  nav.navigation .primary-menu ul#main-menu li a {
+    padding: 8px 10px; } }
+/** Mega Menu **/
+.qtip .grid-9 {
+  width: 70%; }
+
+/** Hide Mega Menus in Footer **/
+.qtip[qtip="1"], .qtip[qtip="3"], .qtip[qtip="5"], .qtip[qtip="7"], .qtip[qtip="9"], .qtip[qtip="11"] {
+  display: none !important; }
+
+/** Homepage body blocks **/
+.block-2 {
+  box-shadow: 2px 2px 5px 1px #333333;
+  background-image: url("/sites/all/themes/riseup/images/paper-texture-highres.jpg");
+  padding: 1em;
+  border: solid 2px #8a481f; }
+  @media screen and (max-width: 740px) {
+    .block-2 {
+      margin: 2em 2em 2em 2em; } }
+
+@media screen and (max-width: 600px) {
+  #block-views-homepage-show-block {
+    display: none; } }
+
+.view-dom-id-378678362a205731918e9ff7d247679c {
+  box-shadow: 2px 2px 5px 1px #333333; }
+
+.view-display-id-block_1 .views-row {
+  margin-bottom: .6em; }
+  .view-display-id-block_1 .views-row .views-field-title {
+    background: white;
+    padding: 0.3em;
+    opacity: 0.93;
+    font-family: 'Mathlete Bulky';
+    font-weight: bold;
+    font-size: 1.8em;
+    line-height: 0.8em; }
+    .view-display-id-block_1 .views-row .views-field-title a {
+      color: #1d6e80; }
+  .view-display-id-block_1 .views-row .field-name-field-featured-image, .view-display-id-block_1 .views-row .field-name-field-cover-photo {
+    margin-top: -2.4em; }
+    .view-display-id-block_1 .views-row .field-name-field-featured-image img, .view-display-id-block_1 .views-row .field-name-field-cover-photo img {
+      padding: 9px;
+      background: white; }
+
+#zone-preface {
+  background: none; }
+
+#block-block-3 h2 {
+  font-family: pointy;
+  color: #8a481f;
+  border-bottom: 1px dashed; }
+#block-block-3 .content {
+  height: 0; }
+
+.front .region-content h2.block-title {
+  color: #8a481f;
+  border-bottom: solid 2px #8a481f;
+  font-size: 1.5em;
+  font-weight: bold; }
+.front .region-content .views-field {
+  background: none;
+  font-family: 'Alegreya Sans';
+  font-weight: 500;
+  font-size: 1em; }
+.front .region-content .views-field-created {
+  color: grey; }
+.front .region-content .views-field-field-date {
+  color: #8a481f; }
+.front .region-content .views-field-title a {
+  color: #1d6e80; }
+
+.front aside#region-sidebar-first,
+.front aside#region-sidebar-second {
+  display: none; }
+
+@media screen and (min-width: 980px) {
+  .front #region-content {
+    width: 940px; } }
+
+.block-news-list-view-block-1,
+.block-events-list-view-block {
+  float: left;
+  margin-right: 2em; }
+  .block-news-list-view-block-1 li:before,
+  .block-events-list-view-block li:before {
+    content: "• ";
+    color: #8a481f;
+    text-indent: -10px; }
+  @media screen and (min-width: 980px) {
+    .block-news-list-view-block-1,
+    .block-events-list-view-block {
+      width: 540px; } }
+  @media screen and (max-width: 980px) {
+    .block-news-list-view-block-1,
+    .block-events-list-view-block {
+      width: 540px; } }
+  @media screen and (max-width: 600px) {
+    .block-news-list-view-block-1,
+    .block-events-list-view-block {
+      width: 400px; } }
+
+@media screen and (min-width: 980px) {
+  .block-views-featured-songs-videos-block {
+    margin-left: 560px; } }
+@media screen and (max-width: 980px) {
+  .block-views-featured-songs-videos-block {
+    clear: both;
+    width: 500px; } }
+@media screen and (max-width: 600px) {
+  .block-views-featured-songs-videos-block {
+    width: 400px; } }
+
+/** Fix left margin on flexslider slides **/
+#flexslider-1 ul li {
+  margin-left: 0; }
+
+/** Product Display **/
+.ds-2col-stacked-fluid > .group-left {
+  float: left;
+  /* LTR */
+  width: 60%; }
+
+.ds-2col-stacked-fluid > .group-right {
+  float: right;
+  /* LTR */
+  width: 35%; }
+
+/** Interior Page **/
+#section-content h1#page-title {
+  font-size: 32px; }
+
+.region-header-first img {
+  padding: 9px;
+  background: white;
+  margin-bottom: 2em; }
+
+/** Song **/
+.ds-3col-stacked .wide-middle-column {
+  width: 70%; }
+
+.entity-song-video h2 {
+  font-size: 1.2em; }
+
+.field-name-field-videos .field-item {
+  float: left;
+  margin-right: 2em; }
+
+/** Product **/
+.node-type-product-display .group-left {
+  float: left; }
+.node-type-product-display .group-right {
+  float: right;
+  width: 40%; }
+.node-type-product-display .form-item-quantity label {
+  width: 160px; }
+
+/** Song Circle **/
+.view-singalongs-song-circles .views-column {
+  width: 230px;
+  float: left;
+  margin-bottom: 1em; }
+.view-singalongs-song-circles .views-column-first {
+  clear: left; }
+.view-singalongs-song-circles h3 {
+  border-radius: 4px;
+  clear: both;
+  margin-bottom: .3em;
+  background: #eeeeee;
+  border: 1px solid #898a8c;
+  padding: .25em; }
+@media screen and (max-width: 980px) {
+  .view-singalongs-song-circles .views-column-last {
+    clear: left; } }
+@media screen and (max-width: 740px) {
+  .view-singalongs-song-circles .view-header .view-singalongs-song-circles .views-column {
+    margin-bottom: 0; }
+    .view-singalongs-song-circles .view-header .view-singalongs-song-circles .views-column ul {
+      margin-bottom: 0; } }
+
+.location .region {
+  margin: 0; }
+
+/** Product Listing **/
+.page-products .view-display-products li header h2.field-name-title-field a {
+  font-size: 2em;
+  color: #1d6e80; }
+
+/** Pete Seeger Listing **/
+.view-id-seeger_categories .field-name-field-cover-photo {
+  float: left;
+  margin-right: 2em; }
+.view-id-seeger_categories .views-field-title {
+  float: left;
+  margin-right: 1em;
+  width: 350px; }
+.view-id-seeger_categories .views-row {
+  clear: left;
+  padding-top: 2em; }
+
+/** Inline add to cart for related products **/
+.field-name-field-related-products {
+  margin-top: 1em; }
+  .field-name-field-related-products .node-product-type-related-product h2 {
+    margin-bottom: 0; }
+    .field-name-field-related-products .node-product-type-related-product h2 a {
+      font-size: 1em; }
+  .field-name-field-related-products .node-product-type-related-product .field-name-commerce-price {
+    margin: 0; }
+  .field-name-field-related-products .node-product-type-related-product .field-name-commerce-price {
+    padding-bottom: 0; }
+  .field-name-field-related-products .node-product-type-related-product .field-name-field-product form.commerce-add-to-cart {
+    padding-top: 0;
+    background: none; }
+    .field-name-field-related-products .node-product-type-related-product .field-name-field-product form.commerce-add-to-cart #edit-submit, .field-name-field-related-products .node-product-type-related-product .field-name-field-product form.commerce-add-to-cart #edit-submit--2, .field-name-field-related-products .node-product-type-related-product .field-name-field-product form.commerce-add-to-cart #edit-submit--3 {
+      padding-top: 0;
+      margin-top: 0; }
+  .field-name-field-related-products .node-product-type-related-product .grid-8 {
+    padding-left: 0; }
+
+/** Add to cart confirmation **/
+#messages div.messages.commerce-add-to-cart-confirmation {
+  background-image: url("/sites/all/themes/riseup/images/paper-texture-highres.jpg");
+  background: white; }
+  #messages div.messages.commerce-add-to-cart-confirmation .button-wrapper {
+    background: none; }
+
+#edit-checkout-donate-commerce-donate-amount-und-select:nth-child(2) {
+  padding-top: 2em; }
+
+/** Search header **/
+@media screen and (max-width: 740px) {
+  .block-views-exp-display-products-page h2 {
+    float: left;
+    margin-left: 70%;
+    padding-top: .5em;
+    color: #666;
+    font-weight: normal; } }
+
+/** Social Icons Tab **/
+#block-block-6 div.block-inner {
+  border-radius: 4px;
+  background-image: url("/sites/all/themes/riseup/images/paper-texture-highres.jpg");
+  z-index: 9999; }
+  #block-block-6 div.block-inner h2.block-title {
+    font-size: 1.4em;
+    line-height: 1em; }
+  @media screen and (min-width: 740px) {
+    #block-block-6 div.block-inner {
+      right: 0px;
+      top: 250px;
+      height: 270px;
+      width: 40px;
+      margin: 0;
+      padding: 8px;
+      position: fixed;
+      display: block; }
+      #block-block-6 div.block-inner img {
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        width: 42px;
+        height: 42px; } }
+  @media screen and (max-width: 740px) {
+    #block-block-6 div.block-inner {
+      display: none; } }
+
+/** Footer **/
+#zone-footer .region-footer-third-inner .block {
+  width: 50%;
+  float: left; }
+
+/** Donate **/
+#edit-line-item-fields .form-item-line-item-fields-commerce-donate-amount-und-select label {
+  float: none; }
+
+/** Ticket Sales **/
+.passengers_select .form-item.form-type-select {
+  margin-top: 0;
+  margin-bottom: 2em; }
+
+#commerce-tickets-purchase-form #edit-submit,
+#commerce-tickets-purchase-form #total_cost {
+  float: left; }
+
+.field-name-field-buy-tickets .field-label {
+  margin-bottom: 1em; }
+
+.field-name-field-venue-website,
+.field-name-field-contact-name {
+  margin-top: 1em; }
+
+/** Shopping Cart Styles **/
+/**
+
+//Overide donate button here
+.node-donation {
+  .form-submit {
+    background-image: url('/sites/all/themes/riseup/images/bg_add_to_cart.png');
+  }
+}
+
+#edit-checkout-donate {
+  width: 60%;
+}
+
+
+.form-item-checkout-donate-commerce-donate-amount-und-select {
+  label {
+    width: 980px;
+	}
+}
+
+**/
+
+/*# sourceMappingURL=dragons.css.map */
